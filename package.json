@@ -1,0 +1,9 @@
+{
+    "scripts": {
+        "start": "node ."
+    },
+    "dependencies": {
+        "@ton/core": "^0.56.3",
+        "ton-lite-client": "^3.0.0"
+    }
+}
