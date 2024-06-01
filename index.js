@@ -3,6 +3,7 @@ const config = require("./config");
 
 const { Address, Cell, loadTransaction } = require("@ton/core");
 const { bigIntToBuffer } = require("./util");
+const { decodeTransaction } = require("./boc");
 
 const main = async () => {
     const master = await client.getMasterchainInfo();
@@ -26,7 +27,7 @@ const main = async () => {
     );
 
     for (const txRaw of decodedHistory) {
-        const tx = loadTransaction(
+        const tx = await decodeTransaction(
             txRaw.beginParse() // Begin parsing the transaction
         );
 
